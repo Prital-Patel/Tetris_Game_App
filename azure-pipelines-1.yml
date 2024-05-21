@@ -37,3 +37,11 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+    - script: |
+        echo "dockerRegistryServiceConnection=$(dockerRegistryServiceConnection)"
+        echo "imageRepository=$(imageRepository)"
+        echo "containerRegistry=$(containerRegistry)"
+        echo "dockerfilePath=$(dockerfilePath)"
+        echo "tag=$(tag)"
+      displayName: 'Print variables for debugging'
+
